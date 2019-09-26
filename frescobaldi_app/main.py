@@ -29,6 +29,7 @@ import sys
 from PyQt5.QtCore import QSettings, QTimer, QUrl
 from PyQt5.QtGui import QTextCursor
 from PyQt5.QtWidgets import QApplication
+import PyQt5.QtWebEngineWidgets
 
 import appinfo             # Information about our application
 import app              # Instantiate global signals etc

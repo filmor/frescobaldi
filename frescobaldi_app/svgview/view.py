@@ -33,7 +33,7 @@ import sys
 
 from PyQt5.QtCore import pyqtSignal, pyqtSlot, QObject, QSettings, QUrl
 from PyQt5.QtGui import QTextCharFormat, QTextCursor
-from PyQt5.QtWebKitWidgets import QWebView
+from PyQt5.QtWebEngineWidgets import QWebEngineView as QWebView
 
 import app
 import util

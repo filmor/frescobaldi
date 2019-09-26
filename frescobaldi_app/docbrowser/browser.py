@@ -27,8 +27,8 @@ import os
 from PyQt5.QtCore import QSettings, Qt, QUrl
 from PyQt5.QtGui import QKeySequence
 from PyQt5.QtPrintSupport import QPrintDialog, QPrinter
-from PyQt5.QtWebKit import QWebSettings
-from PyQt5.QtWebKitWidgets import QWebPage, QWebView
+from PyQt5.QtWebEngineWidgets import QWebEngineSettings as QWebSettings
+from PyQt5.QtWebEngineWidgets import QWebEnginePage as QWebPage, QWebEngineView as QWebView
 from PyQt5.QtWidgets import QComboBox, QMenu, QToolBar, QVBoxLayout, QWidget
 
 import app
@@ -64,11 +64,6 @@ class Browser(QWidget):
         ac.help_home.triggered.connect(self.showHomePage)
         ac.help_print.triggered.connect(self.slotPrint)
 
-        self.webview.page().setNetworkAccessManager(lilydoc.network.accessmanager())
-        self.webview.page().setLinkDelegationPolicy(QWebPage.DelegateAllLinks)
-        self.webview.page().linkClicked.connect(self.openUrl)
-        self.webview.page().setForwardUnsupportedContent(True)
-        self.webview.page().unsupportedContent.connect(self.slotUnsupported)
         self.webview.urlChanged.connect(self.slotUrlChanged)
         self.webview.customContextMenuRequested.connect(self.slotShowContextMenu)
 
